@@ -52,7 +52,8 @@ const services: { icon: IconName; number: string; title: string; text: string }[
   { icon: "bars", number: "05", title: "Commodities Advisory", text: "Commercial insight and transaction support for energy, mineral and agricultural commodities." },
   { icon: "leaf", number: "06", title: "Carbon Markets", text: "Helping organizations navigate carbon opportunities and the transition to lower-emission growth." },
   { icon: "bridge", number: "07", title: "Vessel Leasing", text: "Connecting operators with fit-for-purpose marine assets and commercially sound leasing solutions." },
-  { icon: "building", number: "08", title: "Public Sector Advisory", text: "Strategy, transformation and investment support for governments and public-sector organizations." },
+  { icon: "briefcase", number: "08", title: "Strategic Business Development", text: "Helping organizations enter markets, shape partnerships and convert strategic intent into growth." },
+  { icon: "building", number: "09", title: "Public Sector Advisory", text: "Strategy, transformation and investment support for governments and public-sector organizations." },
 ];
 
 const industries = [
@@ -82,6 +83,26 @@ export default function Home() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "OKEFF Integrated Limited",
+            url: "https://www.okeff.com",
+            email: "info@okeff.com",
+            areaServed: ["Canada", "Nigeria", "Africa"],
+            knowsAbout: [
+              "Investment Facilitation",
+              "Trade Finance",
+              "Oil and Gas Consultancy",
+              "International Trade",
+              "Public Sector Advisory",
+            ],
+          }),
+        }}
+      />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="OKEFF Integrated Limited home">
           <Image src="/okeff-logo.png" alt="OKEFF Integrated Limited" width={72} height={72} priority />
@@ -121,7 +142,7 @@ export default function Home() {
         <div className="shell trust-inner">
           <p>Trusted perspective across</p>
           <div><strong>2</strong><span>Global<br />Markets</span></div>
-          <div><strong>8</strong><span>Integrated<br />Services</span></div>
+          <div><strong>9</strong><span>Integrated<br />Services</span></div>
           <div><strong>6</strong><span>Strategic<br />Industries</span></div>
           <div className="trust-mark"><Icon name="globe" size={30} /><span>LOCAL INSIGHT<br />GLOBAL REACH</span></div>
         </div>
@@ -258,7 +279,8 @@ export default function Home() {
             <label><span>Name *</span><input name="name" required placeholder="Your full name" /></label>
             <label><span>Company</span><input name="company" placeholder="Organization name" /></label>
             <label><span>Email *</span><input type="email" name="email" required placeholder="name@company.com" /></label>
-            <label><span>Country</span><input name="country" placeholder="Country" /></label>
+            <label><span>Phone</span><input type="tel" name="phone" placeholder="Phone number" /></label>
+            <label className="full"><span>Country</span><input name="country" placeholder="Country" /></label>
             <label className="full"><span>Service required</span><select name="service" defaultValue=""><option value="" disabled>Select a service</option>{services.map(s => <option key={s.title}>{s.title}</option>)}</select></label>
             <label className="full"><span>Message *</span><textarea name="message" required rows={4} placeholder="Tell us briefly about your objectives" /></label>
             <button className="button primary" type="submit">Send enquiry <Icon name="arrow" size={18} /></button>
