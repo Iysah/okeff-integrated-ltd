@@ -296,7 +296,7 @@ export default function Home() {
           <div><h4>Expertise</h4><a href="#services">Investment</a><a href="#services">Trade finance</a><a href="#services">Oil & gas</a><a href="#services">Public sector</a></div>
           <div><h4>Offices</h4><p>Canada</p><p>Nigeria</p><a href="mailto:info@okeff.com">info@okeff.com</a></div>
         </div>
-        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} OKEFF Integrated Limited. All rights reserved.</span><span>Privacy &nbsp;&nbsp; Terms</span></div>
+        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} OKEFF Integrated Limited. All rights reserved.</span><span>Privacy &nbsp;&nbsp; Terms &nbsp;&nbsp;·&nbsp;&nbsp; Crafted by Zorfts</span></div>
       </footer>
     </main>
   );
